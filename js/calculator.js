@@ -59,7 +59,7 @@ function update(event) {
       }
 
       if (element instanceof HTMLInputElement) {
-        element.value = changes[selector];
+        element.value = newText;
       } else {
         element.textContent = newText;
       }
