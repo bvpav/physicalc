@@ -5,6 +5,12 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Калкулатор за превръщане в мерни единици - PhysiCalc</title>
+
+    <!-- икони -->
+    <link
+      rel="stylesheet"
+      href="/vendor/fontawesome-free-5.15.3-web/css/all.css"
+    />
   </head>
   <body>
     <form id="calculator-form">
@@ -45,7 +51,9 @@
           <option value="6" data-unit-symbol="M">Mg</option>
           <option value="9" data-unit-symbol="G">Gg</option>
         </select>
-        <button type="button" onclick="swap()"><-></button>
+        <button type="button" onclick="swap()">
+          <i class="fas fa-exchange-alt"></i>
+        </button>
         <label for="to">До</label>
         <input type="number" id="to" readonly />
         <select name="to-multiplier" id="to-multiplier">
@@ -129,6 +137,6 @@
         update();
       }
     </script>
-    <script src="../js/calculator.js"></script>
+    <script src="/js/calculator.js"></script>
   </body>
 </html>
