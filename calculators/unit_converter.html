@@ -92,11 +92,13 @@
       }
 
       function calculate(parameters) {
-        const norm = parameters.from * Math.pow(10, parameters.fromMultiplier);
+        const from = parameters.from;
+        const fm = parameters.fromMultiplier;
+        const tm = parameters.toMultiplier;
         return {
           'option[data-unit-symbol]': (opt) =>
             opt.dataset.unitSymbol + parameters.baseUnit,
-          '#to': norm * Math.pow(10, -parameters.toMultiplier),
+          '#to': from * Math.pow(10, fm - tm),
         };
       }
 
