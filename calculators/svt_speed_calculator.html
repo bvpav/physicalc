@@ -1,0 +1,161 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Калкулатор за скорост – PhysiCalc</title>
+
+    <!-- икони -->
+    <link
+      rel="stylesheet"
+      href="/vendor/fontawesome-free-5.15.3-web/css/all.css"
+    />
+    <!-- стилове -->
+    <link rel="stylesheet" href="/vendor/bulma/css/bulma.css" />
+    <link rel="stylesheet" href="/css/helpers.css" />
+    <link rel="stylesheet" href="/css/main.css" />
+  </head>
+  <body>
+    <div class="block">
+      <nav
+        class="navbar is-white is-fixed-top"
+        role="navigation"
+        aria-label="main navigation"
+      >
+        <div class="container">
+          <div class="navbar-brand">
+            <a href="/" class="navbar-item brand-text">PhysiCalc</a>
+            <a
+              role="button"
+              id="navbar-burger"
+              class="navbar-burger"
+              aria-label="menu"
+              aria-expanded="false"
+              data-target="navbarBasicExample"
+            >
+              <span aria-hidden="true"></span>
+              <span aria-hidden="true"></span>
+              <span aria-hidden="true"></span>
+            </a>
+          </div>
+          <div class="navbar-menu" id="navbar-menu">
+            <div class="navbar-end">
+              <a href="/" class="navbar-item">Начало</a>
+              <a href="/#calculators" class="navbar-item">Калкулатори</a>
+              <a href="/about.html" class="navbar-item">За нас</a>
+            </div>
+          </div>
+        </div>
+      </nav>
+    </div>
+    <section class="section">
+      <div class="container">
+        <nav class="breadcrumb" aria-label="breadcrumbs">
+          <ul>
+            <li><a href="/#calculators">Калкулатори</a></li>
+            <li class="is-active">
+              <a href="#" aria-current="page">Калкулатор за скорост</a>
+            </li>
+          </ul>
+        </nav>
+      </div>
+    </section>
+
+    <section class="section has-background-white">
+      <section class="hero">
+        <div class="container">
+          <div class="hero-body">
+            <p class="title">Калкулатор за скорост</p>
+            <form id="calculator-form">
+              <div class="block">
+                <div class="field">
+                  <label for="distance" class="label">Път (S)</label>
+                  <div class="field has-addons">
+                    <div class="control">
+                      <input
+                        type="number"
+                        name="distance"
+                        id="distance"
+                        value="1"
+                        class="input is-primary"
+                      />
+                    </div>
+                    <div class="control">
+                      <button
+                        class="button is-primary noninteractive"
+                        type="button"
+                      >
+                        m
+                      </button>
+                    </div>
+                  </div>
+                </div>
+                <div class="field">
+                  <label for="time" class="label">Време (t)</label>
+                  <div class="field has-addons">
+                    <div class="control">
+                      <input
+                        type="number"
+                        name="time"
+                        id="time"
+                        value="1"
+                        class="input is-primary"
+                      />
+                    </div>
+                    <div class="control">
+                      <button
+                        class="button is-primary noninteractive"
+                        type="button"
+                      >
+                        s
+                      </button>
+                    </div>
+                  </div>
+                </div>
+              </div>
+              <div class="block">
+                <div class="field">
+                  <label for="velocity class="label">Скорост (V)</label>
+                  <div class="field has-addons">
+                    <div class="control">
+                      <input
+                        type="number"
+                        name="velocity"
+                        id="velocity"
+                        value="1"
+                        class="input"
+                        readonly
+                      />
+                    </div>
+                    <div class="control">
+                      <button class="button is-static" type="button">m/s</button>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </form>
+          </div>
+        </div>
+      </section>
+    </section>
+    <script>
+      function check(formData) {
+        const distance = Number.parseFloat(formData.get('distance'));
+        const time = Number.parseFloat(formData.get('time'));
+        if (Number.isNaN(distance) || Number.isNaN(time)) {
+          return null;
+        }
+        return { distance, time };
+      }
+
+      function calculate(parameters) {
+        return {
+          '#velocity': parameters.distance / parameters.time,
+        };
+      }
+    </script>
+    <script src="/js/calculator.js"></script>
+    <script src="/js/navbar_toggle.js"></script>
+  </body>
+</html>
