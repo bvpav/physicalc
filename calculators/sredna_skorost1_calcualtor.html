@@ -4,7 +4,7 @@
     <meta charset="UTF-8" />
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Калкулатор за плюс едно – PhysiCalc</title>
+    <title>Калкулатор за средна скорост– PhysiCalc</title>
 
     <!-- икони -->
     <link
@@ -55,7 +55,7 @@
             <li><a href="/">Начало</a></li>
             <li><a href="/#calculators">Калкулатори</a></li>
             <li class="is-active">
-              <a href="#" aria-current="page">Калкулатор за плюс едно</a>
+              <a href="#" aria-current="page">Калкулатор за средна скорост</a>
             </li>
           </ul>
         </nav>
@@ -66,17 +66,17 @@
       <section class="hero">
         <div class="container">
           <div class="hero-body">
-            <p class="title">Калкулатор за плюс едно</p>
+            <p class="title">Калкулатор за средна скорост</p>
             <form id="calculator-form">
               <div class="block">
                 <div class="field">
-                  <label for="num" class="label">Число</label>
+                  <label for="v1" class="label">Скорост 1</label>
                   <div class="field has-addons">
                     <div class="control">
                       <input
                         type="number"
-                        name="num"
-                        id="num"
+                        name="v1"
+                        id="v1"
                         value="1"
                         class="input is-primary"
                       />
@@ -87,7 +87,7 @@
                         tabindex="-1"
                         type="button"
                       >
-                        круши
+                        km\h
                       </button>
                     </div>
                   </div>
@@ -95,13 +95,38 @@
               </div>
               <div class="block">
                 <div class="field">
-                  <label for="res" class="label">Резултат</label>
+                  <label for="v2" class="label">Скорост 2</label>
                   <div class="field has-addons">
                     <div class="control">
                       <input
                         type="number"
-                        name="res"
-                        id="res"
+                        name="v2"
+                        id="v2"
+                        value="1"
+                        class="input is-primary"
+                      />
+                    </div>
+                    <div class="control">
+                      <button
+                        class="button is-primary noninteractive"
+                        tabindex="-1"
+                        type="button"
+                      >
+                        km\h
+                      </button>
+                    </div>
+                  </div>
+                </div>
+              </div>
+              <div class="block">
+                <div class="field">
+                  <label for="v0" class="label">Средна скорост</label>
+                  <div class="field has-addons">
+                    <div class="control">
+                      <input
+                        type="number"
+                        name="v0"
+                        id="v0"
                         value="1"
                         class="input"
                         readonly
@@ -113,7 +138,7 @@
                         tabindex="-1"
                         type="button"
                       >
-                        круши
+                        km\h
                       </button>
                     </div>
                   </div>
@@ -127,18 +152,26 @@
 
     <script>
       function check(formData) {
-        const num = Number.parseFloat(formData.get('num'));
-        if (Number.isNaN(num)) {
+        const v1 = Number.parseFloat(formData.get('v1'));
+        if (Number.isNaN(v1) || v1 < 0) {
+          return null;
+        }
+
+        const v2 = Number.parseFloat(formData.get('v2'));
+        if (Number.isNaN(v2) || v2 < 0) {
           return null;
         }
         return {
-          num,
+          v1,
+          v2,
         };
       }
 
       function calculate(parameters) {
         return {
-          '#res': parameters.num + 1,
+          '#v0':
+            (2 * parameters.v1 * parameters.v2) /
+            (parameters.v1 + parameters.v2),
         };
       }
     </script>
@@ -155,16 +188,12 @@
                     <p class="title is-4">
                       <a
                         class="title is-4"
-                        href="/calculators/svt_time_calculator.html"
+                        href="/calculators/sredna_skorost1_calcualtor.html"
                       >
-                        Калкулатор за време
+                        Калкулатор за средна скорост
                       </a>
                     </p>
                     <div class="content">
-                      <span class="tag text-icon is-link is-light">
-                        <span class="icon"><i class="fas fa-tag"></i></span>
-                        <span>механика</span>
-                      </span>
                       <span class="tag text-icon is-warning is-light">
                         <span class="icon"><i class="fas fa-tag"></i></span>
                         <span>движение</span>
