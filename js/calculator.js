@@ -1,4 +1,5 @@
 const calculatorForm = document.getElementById('calculator-form');
+const primaryInputs = calculatorForm.querySelectorAll('.is-primary');
 
 // функция, която обновява формата за калкулатора
 // разчита да са дефинирани 2 функции:
@@ -45,7 +46,15 @@ function update(event) {
   const parameters = check(formData);
   if (parameters === null) {
     // има грешка във входните данни
+    for (const input of primaryInputs) {
+      input.classList.remove('is-primary');
+      input.classList.add('is-danger');
+    }
     return;
+  }
+  for (const input of primaryInputs) {
+    input.classList.add('is-primary');
+    input.classList.remove('is-danger');
   }
   const changes = calculate(parameters);
   for (const selector in changes) {
