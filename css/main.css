@@ -1,0 +1,11 @@
+html {
+  background-color: #ecf0f3 !important;
+}
+.navbar {
+  border-top: 8px solid #00d1b2;
+  margin-bottom: 1rem; /* rem е спрямо размера на шрифта, често е 16px */
+}
+.brand-text {
+  font-weight: 500;
+  text-transform: uppercase;
+}
