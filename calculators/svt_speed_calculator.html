@@ -147,6 +147,9 @@
         if (Number.isNaN(distance) || Number.isNaN(time)) {
           return null;
         }
+        if (distance < 0 || time < 0) {
+          return null;
+        }
         return { distance, time };
       }
 

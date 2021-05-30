@@ -147,6 +147,9 @@
         if (Number.isNaN(velocity) || Number.isNaN(time)) {
           return null;
         }
+        if (velocity < 0 || time < 0) {
+          return null;
+        }
         return { velocity, time };
       }
 

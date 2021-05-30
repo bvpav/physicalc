@@ -153,6 +153,9 @@
         if (Number.isNaN(distance) || Number.isNaN(velocity)) {
           return null;
         }
+        if (distance < 0 || velocity < 0) {
+          return null;
+        }
         return { distance, velocity };
       }
 
