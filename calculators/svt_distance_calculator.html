@@ -142,63 +142,32 @@
       </section>
     </section>
 
+    <script>
+      function check(formData) {
+        const velocity = Number.parseFloat(formData.get('velocity'));
+        const time = Number.parseFloat(formData.get('time'));
+        if (Number.isNaN(velocity) || Number.isNaN(time)) {
+          return null;
+        }
+        if (velocity < 0 || time < 0) {
+          return null;
+        }
+        return { velocity, time };
+      }
+
+      function calculate(parameters) {
+        console.log(parameters);
+        return {
+          '#distance': parameters.velocity * parameters.time,
+        };
+      }
+    </script>
+
     <section class="section">
       <div class="hero">
         <div class="hero-body">
           <h1 class="title">Подобни калкулатори</h1>
-          <div id="calc-list" class="container">
-            <div class="columns">
-              <div class="column">
-                <article class="card">
-                  <div class="card-content">
-                    <p class="title is-4">
-                      <a
-                        class="title is-4"
-                        href="/calculators/svt_speed_calculator.html"
-                      >
-                        Калкулатор за скорост
-                      </a>
-                    </p>
-                    <div class="content">
-                      <span class="tag text-icon is-link is-light">
-                        <span class="icon"><i class="fas fa-tag"></i></span>
-                        <span>механика</span>
-                      </span>
-                      <span class="tag text-icon is-warning is-light">
-                        <span class="icon"><i class="fas fa-tag"></i></span>
-                        <span>движение</span>
-                      </span>
-                    </div>
-                  </div>
-                </article>
-              </div>
-              <div class="column">
-                <article class="card">
-                  <div class="card-content">
-                    <p class="title is-4">
-                      <a
-                        class="title is-4"
-                        href="/calculators/svt_time_calculator.html"
-                      >
-                        Калкулатор за време
-                      </a>
-                    </p>
-                    <div class="content">
-                      <span class="tag text-icon is-link is-light">
-                        <span class="icon"><i class="fas fa-tag"></i></span>
-                        <span>механика</span>
-                      </span>
-                      <span class="tag text-icon is-warning is-light">
-                        <span class="icon"><i class="fas fa-tag"></i></span>
-                        <span>движение</span>
-                      </span>
-                    </div>
-                  </div>
-                </article>
-              </div>
-              <div class="column"></div>
-            </div>
-          </div>
+          <div id="calc-list" class="container"></div>
         </div>
       </div>
     </section>
@@ -264,26 +233,6 @@
       </div>
     </footer>
 
-    <script>
-      function check(formData) {
-        const velocity = Number.parseFloat(formData.get('velocity'));
-        const time = Number.parseFloat(formData.get('time'));
-        if (Number.isNaN(velocity) || Number.isNaN(time)) {
-          return null;
-        }
-        if (velocity < 0 || time < 0) {
-          return null;
-        }
-        return { velocity, time };
-      }
-
-      function calculate(parameters) {
-        console.log(parameters);
-        return {
-          '#distance': parameters.velocity * parameters.time,
-        };
-      }
-    </script>
     <script src="/js/calculator.js"></script>
     <script src="/js/navbar_toggle.js"></script>
     <script src="/js/calc-list.js"></script>

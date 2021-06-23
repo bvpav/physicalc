@@ -141,6 +141,7 @@
         </div>
       </section>
     </section>
+
     <script>
       function check(formData) {
         const distance = Number.parseFloat(formData.get('distance'));
@@ -165,59 +166,7 @@
       <div class="hero">
         <div class="hero-body">
           <h1 class="title">Подобни калкулатори</h1>
-          <div class="container">
-            <div class="columns">
-              <div class="column">
-                <article class="card">
-                  <div class="card-content">
-                    <p class="title is-4">
-                      <a
-                        class="title is-4"
-                        href="/calculators/svt_time_calculator.html"
-                      >
-                        Калкулатор за време
-                      </a>
-                    </p>
-                    <div class="content">
-                      <span class="tag text-icon is-link is-light">
-                        <span class="icon"><i class="fas fa-tag"></i></span>
-                        <span>механика</span>
-                      </span>
-                      <span class="tag text-icon is-warning is-light">
-                        <span class="icon"><i class="fas fa-tag"></i></span>
-                        <span>движение</span>
-                      </span>
-                    </div>
-                  </div>
-                </article>
-              </div>
-              <div class="column">
-                <article class="card">
-                  <div class="card-content">
-                    <p class="title is-4">
-                      <a
-                        class="title is-4"
-                        href="/calculators/svt_distance_calculator.html"
-                      >
-                        Калкулатор за път
-                      </a>
-                    </p>
-                    <div class="content">
-                      <span class="tag text-icon is-link is-light">
-                        <span class="icon"><i class="fas fa-tag"></i></span>
-                        <span>механика</span>
-                      </span>
-                      <span class="tag text-icon is-warning is-light">
-                        <span class="icon"><i class="fas fa-tag"></i></span>
-                        <span>движение</span>
-                      </span>
-                    </div>
-                  </div>
-                </article>
-              </div>
-              <div class="column"></div>
-            </div>
-          </div>
+          <div id="calc-list" class="container"></div>
         </div>
       </div>
     </section>
@@ -285,5 +234,6 @@
     
     <script src="/js/calculator.js"></script>
     <script src="/js/navbar_toggle.js"></script>
+    <script src="/js/calc-list.js"></script>
   </body>
 </html>
