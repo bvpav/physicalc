@@ -36,6 +36,24 @@ const CALCS = [
 
 const calcList = document.getElementById('calc-list');
 
+function getSimilarCalcs(file) {
+  const currentCalc = CALCS.find((calc) => calc.file === file);
+  let similarCalcs = [];
+  for (calc of CALCS) {
+    if (calc === currentCalc) continue;
+    let foundMutualTags = false;
+    for (tag of calc.tags) {
+      if (currentCalc.tags.includes(tag)) {
+        foundMutualTags = true;
+      }
+    }
+    if (!foundMutualTags) continue;
+
+    similarCalcs.push(calc);
+  }
+  return similarCalcs;
+}
+
 function createCard(calc) {
   let urlPrefix = '';
   // relative paths
@@ -46,13 +64,15 @@ function createCard(calc) {
   const card = document.createElement('article');
   card.className = 'card';
 
-  const image = document.createElement('div');
-  image.className = 'card-image';
-  card.appendChild(image);
-  const figure = document.createElement('figure');
-  figure.className = 'image is-16by9';
-  figure.style.background = '#ccc';
-  image.appendChild(figure);
+  if (!window.location.pathname.includes('/calculators/')) {
+    const image = document.createElement('div');
+    image.className = 'card-image';
+    card.appendChild(image);
+    const figure = document.createElement('figure');
+    figure.className = 'image is-16by9';
+    figure.style.background = '#ccc';
+    image.appendChild(figure);
+  }
 
   const content = document.createElement('div');
   content.className = 'card-content';
@@ -92,17 +112,25 @@ function createCard(calc) {
 function addCalcs(htmlElement) {
   htmlElement.innerHTML = '';
 
-  let row = null;
+  let calcsToShow;
+  if (!location.pathname.includes('/calculators/')) {
+    calcsToShow = CALCS; // началната стр показва всички калкулатори
+  } else {
+    const pn = window.location.pathname;
+    calcsToShow = getSimilarCalcs(pn.substring(pn.lastIndexOf('/') + 1));
+  }
+
+  let row;
 
   let i;
-  for (i in CALCS) {
+  for (i in calcsToShow) {
     if (i % 3 === 0) {
       row = document.createElement('div');
       row.className = 'columns';
       htmlElement.appendChild(row);
     }
 
-    const calc = CALCS[i];
+    const calc = calcsToShow[i];
 
     const column = document.createElement('div');
     column.className = 'column';
