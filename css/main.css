@@ -13,3 +13,9 @@ html {
 .underline {
   text-decoration: underline;
 }
+
+.loader {
+  width: 5rem;
+  height: 5rem;
+  margin: 2rem auto;
+}
