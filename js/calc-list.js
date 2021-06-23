@@ -32,10 +32,16 @@ const CALCS = [
   },
 ];
 
+// код
+
 const calcList = document.getElementById('calc-list');
 
 function createCard(calc) {
-  const urlPrefix = '/calculators/';
+  let urlPrefix = '';
+  // relative paths
+  if (!window.location.pathname.includes('/calculators/')) {
+    urlPrefix = './calculators/';
+  }
 
   const card = document.createElement('article');
   card.className = 'card';
