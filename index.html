@@ -5,10 +5,236 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>PhysiCalc – Нашата колекция от калкулатори по физика</title>
+
+    <!-- икони -->
+    <link
+      rel="stylesheet"
+      href="/vendor/fontawesome-free-5.15.3-web/css/all.css"
+    />
+    <!-- стилове -->
+    <link rel="stylesheet" href="/vendor/bulma/css/bulma.css" />
+    <link rel="stylesheet" href="/css/helpers.css" />
+    <link rel="stylesheet" href="/css/main.css" />
   </head>
   <body>
-    <a href="/calculators/unit_converter.html">
-      направих калк за мерни единици
-    </a>
+    <section class="hero is-primary is-large is-bold">
+      <div class="hero-head">
+        <nav
+          class="navbar is-fixed-top"
+          role="navigation"
+          aria-label="main navigation"
+        >
+          <div class="container">
+            <div class="navbar-brand">
+              <a href="/" class="navbar-item brand-text">PhysiCalc</a>
+              <a
+                role="button"
+                id="navbar-burger"
+                class="navbar-burger"
+                aria-label="menu"
+                aria-expanded="false"
+              >
+                <span aria-hidden="true"></span>
+                <span aria-hidden="true"></span>
+                <span aria-hidden="true"></span>
+              </a>
+            </div>
+            <div class="navbar-menu" id="navbar-menu">
+              <div class="navbar-end">
+                <a href="/" class="navbar-item">Начало</a>
+                <a href="/#calculators" class="navbar-item">Калкулатори</a>
+                <a href="/about.html" class="navbar-item">За нас</a>
+              </div>
+            </div>
+          </div>
+        </nav>
+      </div>
+      <div class="hero-body">
+        <div class="container has-text-centered">
+          <h1 class="title is-uppercase is-size-1">PhysiCalc</h1>
+          <h2 class="subtitle">Ние имаме <em>калкулатори</em></h2>
+        </div>
+      </div>
+      <div class="hero-foor">
+        <div class="container block has-text-centered">
+          <a href="#calculators" class="subtitle is-4">
+            <span class="icon-text">
+              <span class="icon">
+                <i class="fas fa-angle-double-down"></i>
+              </span>
+              <span>Към Калкулаторите</span>
+            </span>
+          </a>
+        </div>
+      </div>
+    </section>
+
+    <section class="section has-background-white"></section>
+
+    <section id="calculators" class="hero has-text-centered">
+      <div class="hero-body">
+        <div class="container">
+          <h3 class="title">Нашите <em>калкулатори</em></h3>
+          <!-- TODO: add search bar and filter stuff -->
+          <div class="container">
+            <div class="columns">
+              <div class="column">
+                <article class="card">
+                  <div class="card-image">
+                    <figure
+                      class="image is-16by9"
+                      style="background: #ccc"
+                    ></figure>
+                  </div>
+                  <div class="card-content">
+                    <p class="title is-4">
+                      <a
+                        class="title is-4"
+                        href="/calculators/svt_speed_calculator.html"
+                      >
+                        Калкулатор за скорост
+                      </a>
+                    </p>
+                    <div class="content">
+                      <span class="tag text-icon is-link is-light">
+                        <span class="icon"><i class="fas fa-tag"></i></span>
+                        <span>механика</span>
+                      </span>
+                      <span class="tag text-icon is-warning is-light">
+                        <span class="icon"><i class="fas fa-tag"></i></span>
+                        <span>движение</span>
+                      </span>
+                    </div>
+                  </div>
+                </article>
+              </div>
+              <div class="column">
+                <article class="card">
+                  <div class="card-image">
+                    <figure
+                      class="image is-16by9"
+                      style="background: #ccc"
+                    ></figure>
+                  </div>
+                  <div class="card-content">
+                    <p class="title is-4">
+                      <a
+                        class="title is-4"
+                        href="/calculators/svt_time_calculator.html"
+                      >
+                        Калкулатор за време
+                      </a>
+                    </p>
+                    <div class="content">
+                      <span class="tag text-icon is-link is-light">
+                        <span class="icon"><i class="fas fa-tag"></i></span>
+                        <span>механика</span>
+                      </span>
+                      <span class="tag text-icon is-warning is-light">
+                        <span class="icon"><i class="fas fa-tag"></i></span>
+                        <span>движение</span>
+                      </span>
+                    </div>
+                  </div>
+                </article>
+              </div>
+              <div class="column">
+                <article class="card">
+                  <div class="card-image">
+                    <figure
+                      class="image is-16by9"
+                      style="background: #ccc"
+                    ></figure>
+                  </div>
+                  <div class="card-content">
+                    <p class="title is-4">
+                      <a
+                        class="title is-4"
+                        href="/calculators/svt_distance_calculator.html"
+                      >
+                        Калкулатор за път
+                      </a>
+                    </p>
+                    <div class="content">
+                      <span class="tag text-icon is-link is-light">
+                        <span class="icon"><i class="fas fa-tag"></i></span>
+                        <span>механика</span>
+                      </span>
+                      <span class="tag text-icon is-warning is-light">
+                        <span class="icon"><i class="fas fa-tag"></i></span>
+                        <span>движение</span>
+                      </span>
+                    </div>
+                  </div>
+                </article>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <footer class="footer">
+      <div class="container">
+        <div class="content has-text-centered">
+          <div class="columns">
+            <div class="column">
+              <h4><strong>PhysiCalc</strong> е проект по ИТ от 8 клас</h4>
+              <p>
+                Подготвили <em>Божидар Павлов</em>, <em>Калоян Атанасов</em> и
+                <em>Никола Сачков</em> от <em>в</em> клас.
+              </p>
+            </div>
+            <div class="column">
+              <h4>
+                <a
+                  class="icon-text"
+                  href="https://github.com/bvpav/physics_calculator"
+                  target="_blank"
+                >
+                  <span class="icon"><i class="fab fa-github"></i></span>
+                  <span class="underline">Виж кода в GitHub</span>
+                </a>
+              </h4>
+              <p>
+                Кодът на сайта е публикуван под
+                <a href="https://www.gnu.org/licenses/gpl-3.0.txt"
+                  >GPL-3.0 лиценз</a
+                >.
+              </p>
+            </div>
+            <div class="column">
+              <div class="block">
+                <a href="https://bulma.io">
+                  <img
+                    src="/img/made-with-bulma.png"
+                    alt="Made with Bulma"
+                    width="128px"
+                    height="24px"
+                  />
+                </a>
+                <p>
+                  Публикувана под
+                  <a href="https://opensource.org/licenses/mit-license.php"
+                    >MIT лиценз</a
+                  >.
+                </p>
+              </div>
+              <div class="block">
+                <p class="icon-text">
+                  <span class="icon"><i class="fas fa-icons"></i></span>
+                  <span
+                    >Икони от
+                    <a href="https://fontawesome.com/">Font Awesome</a></span
+                  >
+                </p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </footer>
+
+    <script src="/js/navbar_toggle.js"></script>
   </body>
 </html>
