@@ -8,25 +8,25 @@ const TAGS = {
 const CALCS = [
   {
     name: 'Калкулатор за скорост',
-    file: 'svt_speed_calculator.html',
+    file: 'svt_speed_calculator',
     image: null,
     tags: ['механика', 'движение'],
   },
   {
     name: 'Калкулатор за време',
-    file: 'svt_time_calculator.html',
+    file: 'svt_time_calculator',
     image: null,
     tags: ['механика', 'движение'],
   },
   {
     name: 'Калкулатор за път',
-    file: 'svt_distance_calculator.html',
+    file: 'svt_distance_calculator',
     image: null,
     tags: ['механика', 'движение'],
   },
   {
     name: 'Калкулатор за средна скорост',
-    file: 'sredna_skorost1_calcualtor.html',
+    file: 'sredna_skorost1_calcualtor',
     image: null,
     tags: ['движение'],
   },
@@ -82,7 +82,8 @@ function createCard(calc) {
   content.appendChild(p);
   const a = document.createElement('a');
   a.className = 'title is-4';
-  a.href = urlPrefix + calc.file;
+  // TODO: ако няма нужда от .html, по-добре да не го прибавяме тук :)
+  a.href = urlPrefix + calc.file + '.html';
   a.textContent = calc.name;
   p.appendChild(a);
 
@@ -116,8 +117,16 @@ function addCalcs(htmlElement) {
   if (!location.pathname.includes('/calculators/')) {
     calcsToShow = CALCS; // началната стр показва всички калкулатори
   } else {
-    const pn = window.location.pathname;
-    calcsToShow = getSimilarCalcs(pn.substring(pn.lastIndexOf('/') + 1));
+    // 1. намери името на текущия калкулатор
+    let calcName = window.location.pathname;
+    // премахни .html от края на името на калкулатура
+    if (calcName.endsWith('.html')) {
+      calcName = calcName.substring(0, calcName.lastIndexOf('.'));
+    }
+    // премахни всички '/' от началото на името на калкулатора
+    calcName = calcName.substr(calcName.lastIndexOf('/') + 1);
+    // 2. намери всички калкулатори, подобни на текущия
+    calcsToShow = getSimilarCalcs(calcName);
   }
 
   let row;
