@@ -1,3 +1,7 @@
 .noninteractive {
   pointer-events: none;
 }
+
+.is-size-big {
+  font-size: 5rem;
+}
