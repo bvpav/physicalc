@@ -56,6 +56,7 @@ const CALCS = [
 // код
 
 const calcList = document.getElementById('calc-list');
+const calcSearch = document.getElementById('calc-search');
 
 function getSimilarCalcs(file) {
   const currentCalc = CALCS.find((calc) => calc.file === file);
@@ -75,7 +76,7 @@ function getSimilarCalcs(file) {
   return similarCalcs;
 }
 
-function createCard(calc) {
+function createCard(calc, searchTerm = '') {
   let urlPrefix = '';
   // relative paths
   if (!window.location.pathname.includes('/calculators/')) {
@@ -106,6 +107,12 @@ function createCard(calc) {
   // TODO: ако няма нужда от .html, по-добре да не го прибавяме тук :)
   a.href = urlPrefix + calc.file + '.html';
   a.textContent = calc.name;
+  if (searchTerm) {
+    a.innerHTML = a.innerHTML.replaceAll(
+      searchTerm,
+      '<mark>' + searchTerm + '</mark>',
+    );
+  }
   p.appendChild(a);
 
   const tags = document.createElement('div');
@@ -131,7 +138,7 @@ function createCard(calc) {
   return card;
 }
 
-function addCalcs(htmlElement) {
+function addCalcs(htmlElement, searchTerm = '') {
   htmlElement.innerHTML = '';
 
   let calcsToShow;
@@ -148,6 +155,10 @@ function addCalcs(htmlElement) {
     calcName = calcName.substr(calcName.lastIndexOf('/') + 1);
     // 2. намери всички калкулатори, подобни на текущия
     calcsToShow = getSimilarCalcs(calcName);
+  }
+
+  if (searchTerm) {
+    calcsToShow = calcsToShow.filter((c) => c.name.includes(searchTerm));
   }
 
   if (calcsToShow.length === 0) {
@@ -173,7 +184,7 @@ function addCalcs(htmlElement) {
     const column = document.createElement('div');
     column.className = 'column';
 
-    const card = createCard(calc);
+    const card = createCard(calc, searchTerm);
     column.appendChild(card);
 
     row.appendChild(column);
@@ -189,5 +200,12 @@ function addCalcs(htmlElement) {
 }
 
 if (calcList) {
-  addCalcs(calcList);
+  if (calcSearch) {
+    addCalcs(calcList, calcSearch.value);
+    calcSearch.addEventListener('input', () =>
+      addCalcs(calcList, calcSearch.value),
+    );
+  } else {
+    addCalcs(calcList);
+  }
 }
