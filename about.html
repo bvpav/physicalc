@@ -9,12 +9,12 @@
     <!-- икони -->
     <link
       rel="stylesheet"
-      href="/vendor/fontawesome-free-5.15.3-web/css/all.css"
+      href="./vendor/fontawesome-free-5.15.3-web/css/all.css"
     />
     <!-- стилове -->
-    <link rel="stylesheet" href="/vendor/bulma/css/bulma.css" />
-    <link rel="stylesheet" href="/css/helpers.css" />
-    <link rel="stylesheet" href="/css/main.css" />
+    <link rel="stylesheet" href="./vendor/bulma/css/bulma.css" />
+    <link rel="stylesheet" href="./css/helpers.css" />
+    <link rel="stylesheet" href="./css/main.css" />
   </head>
   <body>
     <div class="block">
@@ -25,7 +25,7 @@
       >
         <div class="container">
           <div class="navbar-brand">
-            <a href="/" class="navbar-item brand-text">PhysiCalc</a>
+            <a href="./index.html" class="navbar-item brand-text">PhysiCalc</a>
             <a
               role="button"
               id="navbar-burger"
@@ -40,10 +40,14 @@
           </div>
           <div class="navbar-menu" id="navbar-menu">
             <div class="navbar-end">
-              <a href="/" class="navbar-item">Начало</a>
-              <a href="/#unit_converter" class="navbar-item">Мерни единици</a>
-              <a href="/#calculators" class="navbar-item">Калкулатори</a>
-              <a href="/about" class="navbar-item">За нас</a>
+              <a href="./index.html" class="navbar-item">Начало</a>
+              <a href="./index.html#unit_converter" class="navbar-item"
+                >Мерни единици</a
+              >
+              <a href="./index.html#calculators" class="navbar-item"
+                >Калкулатори</a
+              >
+              <a href="./about.html" class="navbar-item">За нас</a>
             </div>
           </div>
         </div>
@@ -54,8 +58,8 @@
       <div class="container">
         <nav class="breadcrumb" aria-label="breadcrumbs">
           <ul>
-            <li><a href="/">Начало</a></li>
-            <li><a class="is-active" href="/about">За нас</a></li>
+            <li><a href="./index.html">Начало</a></li>
+            <li><a class="is-active" href="./about.html">За нас</a></li>
           </ul>
         </nav>
       </div>
@@ -132,14 +136,18 @@
         <ul>
           <li>Основния код за калкулаторите</li>
           <li>
-            <a href="/">Началната страница</a>
-          </li>
-          <li><a href="/#calculators">Търсачката за калкулатори</a></li>
-          <li>
-            <a href="/calculators/svt_time_calculator"> Калкулатор за време </a>
+            <a href="./index.html">Началната страница</a>
           </li>
           <li>
-            <a href="/#unit_converter">
+            <a href="./index.html#calculators">Търсачката за калкулатори</a>
+          </li>
+          <li>
+            <a href="./calculators/svt_time_calculator.html">
+              Калкулатор за време
+            </a>
+          </li>
+          <li>
+            <a href="./index.html#unit_converter">
               Калкулатор за превръщане в мерни единици
             </a>
           </li>
@@ -150,27 +158,27 @@
           <li>Идеи и обратна връзка за дизайна</li>
           <li>Подбор на снимки</li>
           <li>
-            <a href="/calculators/sredna_skorost1_calcualtor">
+            <a href="./calculators/sredna_skorost1_calcualtor.html">
               Калкулатор за средна скорост
             </a>
           </li>
           <li>
-            <a href="/calculators/potencialna_energiq_calculator">
+            <a href="./calculators/potencialna_energiq_calculator.html">
               Калкулатор за потенциална енергия
             </a>
           </li>
           <li>
-            <a href="/calculators/kinetichna_energiq_calculator">
+            <a href="./calculators/kinetichna_energiq_calculator.html">
               Калкулатор за кинетична енергия
             </a>
           </li>
           <li>
-            <a href="/calculators/kpd_calculator">
+            <a href="./calculators/kpd_calculator.html">
               Калкулатор за коефициент на полезно действие
             </a>
           </li>
           <li>
-            <a href="/calculators/kpd_na_idealna_mashina_calculator">
+            <a href="./calculators/kpd_na_idealna_mashina_calculator.html">
               Калкулатор за коефициент на полезно действие на идеална топлинна
               машина
             </a>
@@ -180,17 +188,17 @@
         <h3>Калоян</h3>
         <ul>
           <li>
-            <a href="/calculators/toplina_stp_calculator">
+            <a href="./calculators/toplina_stp_calculator.html">
               Калкулатор за специфичен топлинен капацитет
             </a>
           </li>
           <li>
-            <a href="/calculators/specifichna_toplina_na_topene">
+            <a href="./calculators/specifichna_toplina_na_topene.html">
               Калкулатор за специфична топлина на топене
             </a>
           </li>
           <li>
-            <a href="/calculators/specifichna_toplina_na_izparenie">
+            <a href="./calculators/specifichna_toplina_na_izparenie.html">
               Специфична топлина на изпарение
             </a>
           </li>
@@ -255,7 +263,7 @@
               <div class="block">
                 <a href="https://bulma.io" target="_blank">
                   <img
-                    src="/img/made-with-bulma.png"
+                    src="./img/made-with-bulma.png"
                     alt="Made with Bulma"
                     width="128px"
                     height="24px"
@@ -288,9 +296,9 @@
       </div>
     </footer>
 
-    <script src="/js/stickynav.js"></script>
-    <script src="/js/navbar_toggle.js"></script>
-    <script src="/js/calc-list.js"></script>
-    <script src="/js/calculator.js"></script>
+    <script src="./js/stickynav.js"></script>
+    <script src="./js/navbar_toggle.js"></script>
+    <script src="./js/calc-list.js"></script>
+    <script src="./js/calculator.js"></script>
   </body>
 </html>

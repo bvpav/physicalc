@@ -104,7 +104,11 @@ function getSimilarCalcs(file) {
 }
 
 function createCard(calc, searchTerm = '') {
-  const urlPrefix = '/calculators/';
+  let urlPrefix = '';
+  // relative paths
+  if (!window.location.pathname.includes('/calculators/')) {
+    urlPrefix = './calculators/';
+  }
 
   const card = document.createElement('article');
   card.className = 'card';
@@ -117,7 +121,7 @@ function createCard(calc, searchTerm = '') {
     figure.className = 'image is-16by9';
     figure.style.background = '#ccc';
     const img = document.createElement('img');
-    img.src = '/img/' + calc.image;
+    img.src = './img/' + calc.image;
     img.alt = 'Снимка на ' + calc.name;
     figure.appendChild(img);
     cardImage.appendChild(figure);
@@ -132,10 +136,7 @@ function createCard(calc, searchTerm = '') {
   const a = document.createElement('a');
   a.className = 'title is-4';
   // TODO: ако няма нужда от .html, по-добре да не го прибавяме тук :)
-  a.href = urlPrefix + calc.file;
-  if (window.location.pathname.endsWith('.html')) {
-    a.href += '.html';
-  }
+  a.href = urlPrefix + calc.file + '.html';
   a.textContent = calc.name;
   if (searchTerm) {
     // не се опитвах да използвам regex-и, но се получи естествено
