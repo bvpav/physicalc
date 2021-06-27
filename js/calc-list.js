@@ -12,25 +12,25 @@ const CALCS = [
   {
     name: 'Калкулатор за скорост',
     file: 'svt_speed_calculator',
-    image: null,
+    image: 'biker-icon-background-.jpg',
     tags: ['механика', 'движение'],
   },
   {
     name: 'Калкулатор за време',
     file: 'svt_time_calculator',
-    image: null,
+    image: '96158341-stopwatch-icon-on-white.jpg',
     tags: ['механика', 'движение'],
   },
   {
     name: 'Калкулатор за път',
     file: 'svt_distance_calculator',
-    image: null,
+    image: '484141.png',
     tags: ['механика', 'движение'],
   },
   {
     name: 'Калкулатор за средна скорост',
     file: 'sredna_skorost1_calcualtor',
-    image: null,
+    image: 'average-icon-22.png',
     tags: ['движение'],
   },
   {
@@ -42,13 +42,13 @@ const CALCS = [
   {
     name: 'Калкулатор за КПД',
     file: 'kpd_calculator',
-    image: null,
+    image: '2667544.png',
     tags: ['топлинни явления', 'топлинни машини'],
   },
   {
     name: 'Калкулатор за КПД на идеална топлинна машина',
     file: 'kpd_na_idealna_mashina_calculator',
-    image: null,
+    image: '2667544.png',
     tags: ['топлинни явления', 'топлинни машини'],
   },
 ];
@@ -87,13 +87,17 @@ function createCard(calc, searchTerm = '') {
   card.className = 'card';
 
   if (!window.location.pathname.includes('/calculators/')) {
-    const image = document.createElement('div');
-    image.className = 'card-image';
-    card.appendChild(image);
+    const cardImage = document.createElement('div');
+    cardImage.className = 'card-image';
+    card.appendChild(cardImage);
     const figure = document.createElement('figure');
     figure.className = 'image is-16by9';
     figure.style.background = '#ccc';
-    image.appendChild(figure);
+    const img = document.createElement('img');
+    img.src = '/img/' + calc.image;
+    img.alt = 'Снимка на ' + calc.name;
+    figure.appendChild(img);
+    cardImage.appendChild(figure);
   }
 
   const content = document.createElement('div');
