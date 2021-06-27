@@ -4,6 +4,8 @@ const TAGS = {
   механика: { color: 'link' },
   движение: { color: 'warning' },
   изтрий: { color: 'danger' },
+  'топлинни явления': { color: 'success' },
+  'топлинни машини': { color: 'primary' },
 };
 
 const CALCS = [
@@ -36,6 +38,18 @@ const CALCS = [
     file: 'plus_one_calculator',
     image: null,
     tags: ['изтрий'],
+  },
+  {
+    name: 'Калкулатор за КПД',
+    file: 'kpd_calculator',
+    image: null,
+    tags: ['топлинни явления', 'топлинни машини'],
+  },
+  {
+    name: 'Калкулатор за КПД на идеална топлинна машина',
+    file: 'kpd_idealna_mashina_calculator',
+    image: null,
+    tags: ['топлинни явления', 'топлинни машини'],
   },
 ];
 
