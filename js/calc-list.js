@@ -39,19 +39,19 @@ const CALCS = [
   {
     name: 'Калкулатор за специфичен топлинен капацитет',
     file: 'toplina_stp_calculator',
-    image: 'biker-icon-background-.jpg',
+    image: 'fire.jpg',
     tags: ['топлинни явления', 'топлообмен'],
   },
   {
     name: 'Калкулатор за специфична топлина на топене',
     file: 'specifichna_toplina_na_topene',
-    image: '',
+    image: 'fire.jpg',
     tags: ['топлинни явления', 'топене'],
   },
   {
     name: 'Калкулатор за специфична топлина на изпарение',
     file: 'specifichna_toplina_na_izparenie',
-    image: '',
+    image: 'fire.jpg',
     tags: ['топлинни явления', 'изпарение'],
   },
   {
