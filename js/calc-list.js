@@ -6,6 +6,7 @@ const TAGS = {
   изтрий: { color: 'danger' },
   'топлинни явления': { color: 'success' },
   'топлинни машини': { color: 'primary' },
+  'топлообмен': { color: 'danger' },
 };
 
 const CALCS = [
@@ -32,6 +33,12 @@ const CALCS = [
     file: 'sredna_skorost1_calcualtor',
     image: 'average-icon-22.png',
     tags: ['движение'],
+  },
+  {
+    name: 'Калкулатор за специфичен топлинен капацитет',
+    file: 'toplina_stp_calculator',
+    image: 'biker-icon-background-.jpg',
+    tags: ['топлинни явления', 'топлообмен'],
   },
   {
     name: 'Калкулатор за плюс едно',
