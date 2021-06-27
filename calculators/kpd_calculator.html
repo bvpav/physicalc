@@ -171,12 +171,15 @@
         if (Number.isNaN(Q2)) {
           return null;
         }
+        if (Q2 > Q1) {
+          return null;
+        }
         return { Q1, Q2 };
       }
 
       function calculate(parameters) {
         return {
-          '#result': (1 - parameters.Q2 / parameters.Q1) * 100,
+          '#result': ((1 - parameters.Q2 / parameters.Q1) * 100).toFixed(2),
         };
       }
     </script>
