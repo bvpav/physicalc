@@ -57,6 +57,12 @@ const CALCS = [
     image: '3314483-200.png',
     tags: ['механика', 'движение'],
   },
+  {
+    name: 'Калкулатор за потенциална енергия',
+    file: 'potencialna_energiq_calculator',
+    image: '1819275.png',
+    tags: ['механика', 'движение'],
+  },
 ];
 
 // код
