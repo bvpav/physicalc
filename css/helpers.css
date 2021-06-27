@@ -5,3 +5,8 @@
 .is-size-big {
   font-size: 5rem;
 }
+
+.has-no-br-left {
+  border-top-left-radius: 0 !important;
+  border-bottom-left-radius: 0 !important;
+}

@@ -42,6 +42,7 @@
             <div class="navbar-menu" id="navbar-menu">
               <div class="navbar-end">
                 <a href="/" class="navbar-item">Начало</a>
+                <a href="/#unit_converter" class="navbar-item">Мерни единици</a>
                 <a href="/#calculators" class="navbar-item">Калкулатори</a>
                 <a href="/about.html" class="navbar-item">За нас</a>
               </div>
@@ -82,7 +83,193 @@
       </div>
     </section>
 
-    <section class="section has-background-white"></section>
+    <section id="unit_converter" class="section has-background-white">
+      <section class="hero">
+        <div class="container">
+          <div class="hero-body">
+            <p class="title">Мерни единици</p>
+            <form id="calculator-form">
+              <div class="block">
+                <div class="field">
+                  <label for="base-unit" class="label">Основна единица</label>
+                  <div class="control">
+                    <div class="select is-primary is-fullwidth">
+                      <select name="base-unit" id="base-unit">
+                        <option value="g">g</option>
+                        <option value="m">m</option>
+                        <option value="s">s</option>
+                        <option value="A">A</option>
+                        <option value="Hz">Hz</option>
+                        <option value="N">N</option>
+                        <option value="J">J</option>
+                        <option value="W">W</option>
+                        <option value="Pa">Pa</option>
+                        <option value="C">C</option>
+                        <option value="V">V</option>
+                        <option value="&Omega;">&Omega;</option>
+                      </select>
+                    </div>
+                  </div>
+                </div>
+              </div>
+              <div class="block">
+                <div class="field">
+                  <label class="label" for="from">От</label>
+                  <div class="field has-addons">
+                    <p class="control">
+                      <input
+                        class="input is-primary"
+                        type="number"
+                        name="from"
+                        id="from"
+                        value="1"
+                      />
+                    </p>
+
+                    <div class="select is-primary">
+                      <select
+                        name="from-multiplier"
+                        id="from-multiplier"
+                        class="has-no-br-left"
+                      >
+                        <!-- дробни единици -->
+                        <option value="-9" data-unit-symbol="n">ng</option>
+                        <option value="-6" data-unit-symbol="&micro;">
+                          &micro;g
+                        </option>
+                        <option value="-3" data-unit-symbol="m">mg</option>
+                        <option value="-2" data-unit-symbol="c">cg</option>
+                        <option value="-1" data-unit-symbol="d">dg</option>
+                        <option selected value="0" data-unit-symbol="">
+                          g
+                        </option>
+                        <!-- кратни единици -->
+                        <option value="1" data-unit-symbol="da">dag</option>
+                        <option value="2" data-unit-symbol="h">hg</option>
+                        <option value="3" data-unit-symbol="k">kg</option>
+                        <option value="6" data-unit-symbol="M">Mg</option>
+                        <option value="9" data-unit-symbol="G">Gg</option>
+                      </select>
+                    </div>
+                  </div>
+                </div>
+              </div>
+              <div class="block is-flex is-justify-content-center">
+                <div class="field is-center">
+                  <div class="control">
+                    <button
+                      class="button is-primary"
+                      type="button"
+                      onclick="swap()"
+                    >
+                      <i class="fas fa-arrows-alt-v"></i>
+                    </button>
+                  </div>
+                </div>
+              </div>
+              <div class="block">
+                <div class="field">
+                  <label class="label" for="to">До</label>
+                  <div class="field has-addons has-addons-right">
+                    <p class="control">
+                      <input class="input" type="number" id="to" readonly />
+                    </p>
+                    <p class="control"></p>
+                    <div class="select is-primary">
+                      <select
+                        name="to-multiplier"
+                        id="to-multiplier"
+                        class="has-no-br-left"
+                      >
+                        <!-- дробни единици -->
+                        <option value="-9" data-unit-symbol="n">ng</option>
+                        <option value="-6" data-unit-symbol="&micro;">
+                          &micro;g
+                        </option>
+                        <option value="-3" data-unit-symbol="m">mg</option>
+                        <option value="-2" data-unit-symbol="c">cg</option>
+                        <option value="-1" data-unit-symbol="d">dg</option>
+                        <option value="0" data-unit-symbol="">g</option>
+                        <!-- кратни единици -->
+                        <option value="1" data-unit-symbol="da">dag</option>
+                        <option value="2" data-unit-symbol="h">hg</option>
+                        <option selected value="3" data-unit-symbol="k">
+                          kg
+                        </option>
+                        <option value="6" data-unit-symbol="M">Mg</option>
+                        <option value="9" data-unit-symbol="G">Gg</option>
+                      </select>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </form>
+          </div>
+        </div>
+      </section>
+    </section>
+
+    <script>
+      // проверка дали има грешка във входните данни
+      // ако има грешка, връща null,
+      // ако няма – преобразува всички стрингове в числа
+      // и връща обект с име на параметър и числена стойност
+      function check(formData) {
+        const from = Number.parseFloat(formData.get('from'));
+        if (Number.isNaN(from)) {
+          return null;
+        }
+        const fromMultiplier = Number.parseInt(formData.get('from-multiplier'));
+        const toMultiplier = Number.parseInt(formData.get('to-multiplier'));
+        if (Number.isNaN(from) || Number.isNaN(to)) {
+          return null;
+        }
+        return {
+          baseUnit: formData.get('base-unit'),
+          from,
+          fromMultiplier,
+          toMultiplier,
+        };
+      }
+
+      function calculate(parameters) {
+        const from = parameters.from;
+        const fm = parameters.fromMultiplier;
+        const tm = parameters.toMultiplier;
+        return {
+          'option[data-unit-symbol]': (opt) =>
+            opt.dataset.unitSymbol + parameters.baseUnit,
+          '#to': from * Math.pow(10, fm - tm),
+        };
+      }
+
+      function swap() {
+        const from = document.getElementById('from');
+        const to = document.getElementById('to');
+        from.value = to.value;
+
+        const fromMultiplier = document.getElementById('from-multiplier');
+        const toMultiplier = document.getElementById('to-multiplier');
+        const newFrom = toMultiplier.value;
+        const newTo = fromMultiplier.value;
+
+        for (const option of fromMultiplier.querySelectorAll('option')) {
+          if (option.value === newFrom) {
+            option.selected = true;
+          } else {
+            option.selected = false;
+          }
+        }
+        for (const option of toMultiplier.querySelectorAll('option')) {
+          if (option.value === newTo) {
+            option.selected = true;
+          } else {
+            option.selected = false;
+          }
+        }
+        update();
+      }
+    </script>
 
     <section id="calculators" class="hero has-text-centered pt-5">
       <div class="hero-body">
@@ -167,5 +354,6 @@
     <script src="/js/stickynav.js"></script>
     <script src="/js/navbar_toggle.js"></script>
     <script src="/js/calc-list.js"></script>
+    <script src="/js/calculator.js"></script>
   </body>
 </html>
