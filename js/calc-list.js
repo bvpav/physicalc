@@ -55,12 +55,6 @@ const CALCS = [
     tags: ['топлинни явления', 'изпарение'],
   },
   {
-    name: 'Калкулатор за плюс едно',
-    file: 'plus_one_calculator',
-    image: null,
-    tags: ['изтрий'],
-  },
-  {
     name: 'Калкулатор за КПД',
     file: 'kpd_calculator',
     image: '2667544.png',
