@@ -3,6 +3,7 @@
 const TAGS = {
   механика: { color: 'link' },
   движение: { color: 'warning' },
+  изтрий: { color: 'danger' },
 };
 
 const CALCS = [
@@ -29,6 +30,12 @@ const CALCS = [
     file: 'sredna_skorost1_calcualtor',
     image: null,
     tags: ['движение'],
+  },
+  {
+    name: 'Калкулатор за плюс едно',
+    file: 'plus_one_calculator',
+    image: null,
+    tags: ['изтрий'],
   },
 ];
 
