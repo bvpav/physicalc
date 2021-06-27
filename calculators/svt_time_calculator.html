@@ -159,6 +159,9 @@
         if (distance < 0 || velocity < 0) {
           return null;
         }
+        if (velocity === 0) {
+          return null;
+        }
         return { distance, velocity };
       }
 

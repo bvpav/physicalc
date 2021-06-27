@@ -153,6 +153,9 @@
         if (velocity < 0 || time < 0) {
           return null;
         }
+        if (time === 0) {
+          return null;
+        }
         return { velocity, time };
       }
 
