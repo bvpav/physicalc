@@ -136,6 +136,14 @@ function addCalcs(htmlElement) {
     calcsToShow = getSimilarCalcs(calcName);
   }
 
+  if (calcsToShow.length === 0) {
+    const p = document.createElement('p');
+    p.className = 'text is-size-5 has-text-weight-light';
+    p.textContent = 'Няма намерени калкулатори ;-;';
+    htmlElement.appendChild(p);
+    return;
+  }
+
   let row;
 
   let i;
