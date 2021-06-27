@@ -6,9 +6,9 @@ const TAGS = {
   изтрий: { color: 'danger' },
   'топлинни явления': { color: 'success' },
   'топлинни машини': { color: 'primary' },
-  'топлообмен': { color: 'danger' },
-  'топене': { color: 'danger' },
-  'изпарение': { color: 'danger' },
+  топлообмен: { color: 'danger' },
+  топене: { color: 'danger' },
+  изпарение: { color: 'danger' },
 };
 
 const CALCS = [
