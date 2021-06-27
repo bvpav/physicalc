@@ -47,7 +47,7 @@ const CALCS = [
   },
   {
     name: 'Калкулатор за КПД на идеална топлинна машина',
-    file: 'kpd_idealna_mashina_calculator',
+    file: 'kpd_na_idealna_mashina_calculator',
     image: null,
     tags: ['топлинни явления', 'топлинни машини'],
   },
