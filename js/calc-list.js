@@ -121,7 +121,7 @@ function createCard(calc, searchTerm = '') {
     figure.className = 'image is-16by9';
     figure.style.background = '#ccc';
     const img = document.createElement('img');
-    img.src = '/img/' + calc.image;
+    img.src = './img/' + calc.image;
     img.alt = 'Снимка на ' + calc.name;
     figure.appendChild(img);
     cardImage.appendChild(figure);
