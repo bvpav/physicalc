@@ -7,6 +7,8 @@ const TAGS = {
   'топлинни явления': { color: 'success' },
   'топлинни машини': { color: 'primary' },
   'топлообмен': { color: 'danger' },
+  'топене': { color: 'danger' },
+  'изпарение': { color: 'danger' },
 };
 
 const CALCS = [
@@ -39,6 +41,18 @@ const CALCS = [
     file: 'toplina_stp_calculator',
     image: 'biker-icon-background-.jpg',
     tags: ['топлинни явления', 'топлообмен'],
+  },
+  {
+    name: 'Калкулатор за специфична топлина на топене',
+    file: 'specifichna_toplina_na_topene',
+    image: '',
+    tags: ['топлинни явления', 'топене'],
+  },
+  {
+    name: 'Калкулатор за специфична топлина на изпарение',
+    file: 'specifichna_toplina_na_izparenie',
+    image: '',
+    tags: ['топлинни явления', 'изпарение'],
   },
   {
     name: 'Калкулатор за плюс едно',
