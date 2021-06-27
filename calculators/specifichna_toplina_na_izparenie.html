@@ -176,10 +176,6 @@
           return null;
         }
 
-        const t = Number.parseFloat(formData.get('t'));
-        if (Number.isNaN(t)) {
-          return null;
-        }
         if (m === 0) return null;
 
         return { Q, m };
