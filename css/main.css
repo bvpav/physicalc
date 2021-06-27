@@ -32,3 +32,9 @@ html {
   height: 7rem;
   margin: 2rem auto;
 }
+
+mark {
+  background-color: #ffe08a;
+  color: rgba(0, 0, 0, 0.7);
+  border-radius: 0.2em;
+}
