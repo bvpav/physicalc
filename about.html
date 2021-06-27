@@ -1,0 +1,290 @@
+<!DOCTYPE html>
+<html lang="bg">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>PhysiCalc – Нашата колекция от калкулатори по физика</title>
+
+    <!-- икони -->
+    <link
+      rel="stylesheet"
+      href="/vendor/fontawesome-free-5.15.3-web/css/all.css"
+    />
+    <!-- стилове -->
+    <link rel="stylesheet" href="/vendor/bulma/css/bulma.css" />
+    <link rel="stylesheet" href="/css/helpers.css" />
+    <link rel="stylesheet" href="/css/main.css" />
+  </head>
+  <body>
+    <div class="block">
+      <nav
+        class="navbar is-white is-fixed-top"
+        role="navigation"
+        aria-label="main navigation"
+      >
+        <div class="container">
+          <div class="navbar-brand">
+            <a href="/" class="navbar-item brand-text">PhysiCalc</a>
+            <a
+              role="button"
+              id="navbar-burger"
+              class="navbar-burger"
+              aria-label="menu"
+              aria-expanded="false"
+            >
+              <span aria-hidden="true"></span>
+              <span aria-hidden="true"></span>
+              <span aria-hidden="true"></span>
+            </a>
+          </div>
+          <div class="navbar-menu" id="navbar-menu">
+            <div class="navbar-end">
+              <a href="/" class="navbar-item">Начало</a>
+              <a href="/#unit_converter" class="navbar-item">Мерни единици</a>
+              <a href="/#calculators" class="navbar-item">Калкулатори</a>
+              <a href="/about.html" class="navbar-item">За нас</a>
+            </div>
+          </div>
+        </div>
+      </nav>
+    </div>
+
+    <section class="section">
+      <div class="container">
+        <nav class="breadcrumb" aria-label="breadcrumbs">
+          <ul>
+            <li><a href="/">Начало</a></li>
+            <li><a class="is-active" href="/about.html">За нас</a></li>
+          </ul>
+        </nav>
+      </div>
+    </section>
+
+    <main class="block">
+      <div class="container content">
+        <h1>За нас</h1>
+
+        <h2>Какво е PhysiCalc?</h2>
+        <p>
+          PhysiCalc е сайт с калкулатори по физика. Надявахме се това да си
+          проличи от името...
+        </p>
+        <p>
+          Този сайт го направихме като годишен проект по ИТ за 8 клас. Идеята
+          беше да използваме и трите <em>златни</em> WEB технологии:
+          <em>HTML, CSS</em> и <em>JS</em>.
+        </p>
+
+        <h2>Кои сте вие?</h2>
+        <p>
+          Ние сме <strong>Божидар Павлов</strong>,
+          <strong>Калоян Атанасов</strong> и <strong>Никола Сачков</strong> от
+          <em>в</em> клас. Ние сме ученици :)
+        </p>
+        <p>и да.. това е всичко за нас basically</p>
+
+        <h2>Използвани технологии</h2>
+
+        <p>
+          За създаването на <em>PhysiCalc</em> използвахме чисти HTML, CSS и JS
+          без библиотеки, платформи и framewor-ци, освен
+          <a href="https://bulma.io" target="_blank">Bulma CSS</a> за готовите
+          CSS стилове. Ако не беше Bulma, сайта щеше да изглежда много
+          по-грозен.
+        </p>
+        <p>
+          Също така взехме икони от
+          <a href="https://fontawesome.com" target="_blank">FontAwesome</a>.
+        </p>
+        <p>
+          Изтеглихме снимки от G*ogle Images, дано не нарушаваме авторските им
+          права...
+        </p>
+
+        <h2>Код и имплементация</h2>
+
+        <p>
+          Този сайт разчита на JavaScript за да работи. Всичките калкулатори
+          правят изчисленията в браузерът с JavaScript, без необходимост от
+          сървър. За съжаление това означава, че този сайт няма да работи в
+          по-стари браузери или в тези, които блокират JavaScript.
+        </p>
+
+        <p>
+          Кода изцяло е достъпен за преглед и публикуван като
+          <em>Свободен</em> софтуер под
+          <a href="https://www.gnu.org/licenses/gpl-3.0.txt">GPL-3.0 лиценз</a>.
+          Можете да разгледате кода в
+          <a href="https://github.com/bvpav/physics_calculator" target="_blank">
+            GitHub </a
+          >.
+        </p>
+
+        <h2>Разпределение на работата</h2>
+
+        <p>
+          Постарахме се да разпределим работата по този проект по честен начин.
+          Ето кой какво направи:
+        </p>
+
+        <h3>Божидар</h3>
+        <ul>
+          <li>Основния код за калкулаторите</li>
+          <li>
+            <a href="/">Началната страница</a>
+          </li>
+          <li><a href="/#calculators">Търсачката за калкулатори</a></li>
+          <li>
+            <a href="/calculators/svt_time_calculator.html">
+              Калкулатор за време
+            </a>
+          </li>
+          <li>
+            <a href="/#unit_converter">
+              Калкулатор за превръщане в мерни единици
+            </a>
+          </li>
+        </ul>
+
+        <h3>Никола</h3>
+        <ul>
+          <li>Идеи и обратна връзка за дизайна</li>
+          <li>Подбор на снимки</li>
+          <li>
+            <a href="/calculators/sredna_skorost1_calcualtor.html">
+              Калкулатор за средна скорост
+            </a>
+          </li>
+          <li>
+            <a href="/calculators/potencialna_energiq_calculator.html">
+              Калкулатор за потенциална енергия
+            </a>
+          </li>
+          <li>
+            <a href="/calculators/kinetichna_energiq_calculator.html">
+              Калкулатор за кинетична енергия
+            </a>
+          </li>
+          <li>
+            <a href="/calculators/kpd_calculator.html">
+              Калкулатор за коефициент на полезно действие
+            </a>
+          </li>
+          <li>
+            <a href="/calculators/kpd_na_idealna_mashina_calculator.html">
+              Калкулатор за коефициент на полезно действие на идеална топлинна
+              машина
+            </a>
+          </li>
+        </ul>
+
+        <h3>Калоян</h3>
+        <ul>
+          <li>
+            <a href="/calculators/toplina_stp_calculator.html">
+              Калкулатор за специфичен топлинен капацитет
+            </a>
+          </li>
+          <li>
+            <a href="/calculators/specifichna_toplina_na_topene.html">
+              Калкулатор за специфична топлина на топене
+            </a>
+          </li>
+          <li>
+            <a href="/calculators/specifichna_toplina_na_izparenie.html">
+              Специфична топлина на изпарение
+            </a>
+          </li>
+          <li>Подбор на снимки</li>
+        </ul>
+
+        <h2>Може ли да завършите тази страница с излишен текст?</h2>
+
+        <p>Да, разбира се! Защо ли пък не?</p>
+
+        <p>
+          Lorem ipsum dolor sit amet consectetur adipisicing elit. Ratione
+          cupiditate aut ab iste, voluptate consequuntur beatae distinctio,
+          cumque incidunt laboriosam quisquam aliquam corrupti! Ex, possimus!
+        </p>
+        <p>
+          Aliquid reiciendis ab distinctio. Molestiae rerum quis itaque ab!
+          Porro ea quos amet possimus blanditiis voluptas expedita. Aliquam,
+          impedit architecto fuga amet ea libero placeat.
+        </p>
+        <p>
+          Veritatis, animi odit! Rem omnis laboriosam sint soluta quas iure
+          distinctio error id ullam, eius at? Minima dolore fuga labore
+          doloremque, odit quia sunt obcaecati?
+        </p>
+      </div>
+    </main>
+
+    <footer class="footer">
+      <div class="container">
+        <div class="content has-text-centered">
+          <div class="columns">
+            <div class="column">
+              <h4><strong>PhysiCalc</strong> е проект по ИТ от 8 клас</h4>
+              <p>
+                Подготвили <em>Божидар Павлов</em>, <em>Калоян Атанасов</em> и
+                <em>Никола Сачков</em> от <em>в</em> клас.
+              </p>
+            </div>
+            <div class="column">
+              <h4>
+                <a
+                  class="icon-text"
+                  href="https://github.com/bvpav/physics_calculator"
+                  target="_blank"
+                >
+                  <span class="icon"><i class="fab fa-github"></i></span>
+                  <span class="underline">Виж кода в GitHub</span>
+                </a>
+              </h4>
+              <p>
+                Кодът на сайта е публикуван под
+                <a href="https://www.gnu.org/licenses/gpl-3.0.txt"
+                  >GPL-3.0 лиценз</a
+                >.
+              </p>
+            </div>
+            <div class="column">
+              <div class="block">
+                <a href="https://bulma.io">
+                  <img
+                    src="/img/made-with-bulma.png"
+                    alt="Made with Bulma"
+                    width="128px"
+                    height="24px"
+                  />
+                </a>
+                <p>
+                  Публикувана под
+                  <a href="https://opensource.org/licenses/mit-license.php"
+                    >MIT лиценз</a
+                  >.
+                </p>
+              </div>
+              <div class="block">
+                <p class="icon-text">
+                  <span class="icon"><i class="fas fa-icons"></i></span>
+                  <span
+                    >Икони от
+                    <a href="https://fontawesome.com/">Font Awesome</a></span
+                  >
+                </p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </footer>
+
+    <script src="/js/stickynav.js"></script>
+    <script src="/js/navbar_toggle.js"></script>
+    <script src="/js/calc-list.js"></script>
+    <script src="/js/calculator.js"></script>
+  </body>
+</html>
