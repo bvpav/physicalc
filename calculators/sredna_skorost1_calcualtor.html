@@ -169,10 +169,14 @@
       }
 
       function calculate(parameters) {
-        return {
-          '#v0':
+        let v0 = 0;
+        if (parameters.v1 !== 0 && parameters.v2 !== 0) {
+          v0 =
             (2 * parameters.v1 * parameters.v2) /
-            (parameters.v1 + parameters.v2),
+            (parameters.v1 + parameters.v2);
+        }
+        return {
+          '#v0': v0,
         };
       }
     </script>
