@@ -112,9 +112,12 @@ function createCard(calc, searchTerm = '') {
   a.href = urlPrefix + calc.file + '.html';
   a.textContent = calc.name;
   if (searchTerm) {
-    a.innerHTML = a.innerHTML.replaceAll(
-      searchTerm,
-      '<mark>' + searchTerm + '</mark>',
+    // не се опитвах да използвам regex-и, но се получи естествено
+    // дано не се налага да ги обясняваме...
+    const regularExpressionStuffIdk = new RegExp(searchTerm, 'gi'); // g - greedy i - case insensitive
+    a.innerHTML = a.innerHTML.replace(
+      regularExpressionStuffIdk,
+      (s) => '<mark>' + s + '</mark>',
     );
   }
   p.appendChild(a);
@@ -162,7 +165,9 @@ function addCalcs(htmlElement, searchTerm = '') {
   }
 
   if (searchTerm) {
-    calcsToShow = calcsToShow.filter((c) => c.name.includes(searchTerm));
+    calcsToShow = calcsToShow.filter((c) =>
+      c.name.toLowerCase().includes(searchTerm.toLowerCase()),
+    );
   }
 
   if (calcsToShow.length === 0) {
